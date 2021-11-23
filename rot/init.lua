@@ -1,3 +1,9 @@
+rot = {}
+
+dofile(minetest.get_modpath("rot") .. "/data.lua")
+
+rot.data = rot.loadData()
+
 --[[
 minetest.register_abm({
     nodenames = {"default:dirt_with_grass"},
@@ -63,7 +69,8 @@ minetest.register_abm({
 })
 ]]
 
--- CESPED
+--#region CESPED
+-- CESPED CORRUPTO
 minetest.register_node("rot:dirt_with_grass_toxic", {
 	description = "Grass toxic",
 	tiles ={"original_grass.png^toxic_base.png", "default_dirt.png",
@@ -76,8 +83,8 @@ minetest.register_abm({
     label = 'Corruption in the grass',
     nodenames = {'default:dirt_with_grass'},
     neighbors = {'rot:dirt_with_grass_toxic'},
-    interval = 0.001,
-    chance = 1,
+    interval = rot.data.intervalToxic,
+    chance = rot.data.chanceToxic,
     action = function(pos)
         minetest.add_node(pos, {name = 'rot:dirt_with_grass_toxic'})
         pos.y = pos.y + 1
@@ -85,7 +92,29 @@ minetest.register_abm({
     end,
 })
 
--- NIEVE
+-- CESPED SANTO
+minetest.register_node("rot:dirt_with_grass_holy", {
+	description = "Grass holy",
+	tiles ={"original_grass.png^holy_base.png", "default_dirt.png",
+		{name = "default_dirt.png^original_grass_side.png^holy_side.png",
+		tileable_vertical = false}},
+	groups = {crumbly=3, soil=1},
+})
+
+minetest.register_abm({
+    label = 'Holy in the Grass',
+    nodenames = {'rot:dirt_with_grass_toxic'},
+    neighbors = {'rot:dirt_with_grass_holy'},
+    interval = rot.data.intervalHoly,
+    chance = rot.data.changeHoly,
+    action = function(pos)
+        minetest.add_node(pos, {name = 'rot:dirt_with_grass_holy'})
+    end,
+})
+--#endregion
+
+--#region NIEVE
+-- NIEVE CORRUPTA
 minetest.register_node("rot:dirt_with_snow_toxic", {
 	description = "Snow toxic",
 	tiles ={"original_snow.png^toxic_base.png", "default_dirt.png",
@@ -98,8 +127,8 @@ minetest.register_abm({
     label = 'Corruption in the snow',
     nodenames = {'default:dirt_with_snow'},
     neighbors = {'rot:dirt_with_snow_toxic'},
-    interval = 0.001,
-    chance = 1,
+    interval = rot.data.intervalToxic,
+    chance = rot.data.chanceToxic,
     action = function(pos)
         minetest.add_node(pos, {name = 'rot:dirt_with_snow_toxic'})
         pos.y = pos.y + 1
@@ -107,3 +136,26 @@ minetest.register_abm({
     end,
 })
 
+-- NIEVE SANTA
+minetest.register_node("rot:dirt_with_snow_holy", {
+	description = "Snow holy",
+	tiles ={"original_snow_V2.png^holy_base.png", "default_dirt.png",
+		{name = "default_dirt.png^original_snow_V2_side.png^holy_side.png",
+		tileable_vertical = false}},
+	groups = {crumbly=3, soil=1},
+})
+
+minetest.register_abm({
+    label = 'Holy in the snow',
+    nodenames = {'rot:dirt_with_snow_toxic'},
+    neighbors = {'rot:dirt_with_snow_holy'},
+    interval = rot.data.intervalHoly,
+    chance = rot.data.changeHoly,
+    action = function(pos)
+        minetest.add_node(pos, {name = 'rot:dirt_with_snow_holy'})
+    end,
+})
+--#endregion
+
+--#region
+--#endregion
