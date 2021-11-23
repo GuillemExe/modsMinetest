@@ -46,15 +46,15 @@ minetest.register_tool("mymod:sword_orichalcum", {
 minetest.register_craft({
 	output = 'mymod:sword_orichalcum',
 	recipe = {
-		{'', 'mymod:orichalcum_bar', ''},
-		{'', 'mymod:orichalcum_bar', ''},
-		{'', 'group:stick', ''},
+		{'mymod:orichalcum_bar'},
+		{'mymod:orichalcum_bar'},
+		{'group:stick'},
 	}
 })
 
 -- TOOL AXE ORICHALCUM
 minetest.register_tool("mymod:axe_orichalcum", {
-    description = "Espada de oricalco",
+    description = "Hacha de oricalco",
     inventory_image = "tool_orichalcumaxe.png",
     range = 4.2,
     tool_capabilities = {
@@ -72,9 +72,9 @@ minetest.register_tool("mymod:axe_orichalcum", {
 minetest.register_craft({
 	output = 'mymod:axe_orichalcum',
 	recipe = {
-		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar', ''},
-		{'mymod:orichalcum_bar', 'group:stick', ''},
-		{'', 'group:stick', ''},
+		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar'},
+		{'mymod:orichalcum_bar', 'group:stick'},
+		{'', 'group:stick'},
 	}
 })
 
@@ -82,15 +82,15 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'mymod:axe_orichalcum',
 	recipe = {
-		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar', ''},
-		{'', 'group:stick', 'mymod:orichalcum_bar'},
-		{'', 'group:stick', ''},
+		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar'},
+		{'group:stick', 'mymod:orichalcum_bar'},
+		{'group:stick', ''},
 	}
 })
 
 -- TOOL SHOVEL ORICHALCUM
 minetest.register_tool("mymod:shovel_orichalcum", {
-    description = "Espada de oricalco",
+    description = "Pala de oricalco",
     inventory_image = "tool_orichalcumshovel.png",
     range = 4.2,
     tool_capabilities = {
@@ -108,15 +108,15 @@ minetest.register_tool("mymod:shovel_orichalcum", {
 minetest.register_craft({
 	output = 'mymod:shovel_orichalcum',
 	recipe = {
-		{'', 'mymod:orichalcum_bar', ''},
-		{'', 'group:stick', ''},
-		{'', 'group:stick', ''},
+		{'mymod:orichalcum_bar'},
+		{'group:stick'},
+		{'group:stick'},
 	}
 })
 
 -- TOOL HOE ORICHALCUM
 minetest.register_tool("mymod:hoe_orichalcum", {
-    description = "Espada de oricalco",
+    description = "Hoz de oricalco",
     inventory_image = "tool_orichalcumhoe.png",
     range = 4.2,
     tool_capabilities = {
@@ -134,9 +134,9 @@ minetest.register_tool("mymod:hoe_orichalcum", {
 minetest.register_craft({
 	output = 'mymod:hoe_orichalcum',
 	recipe = {
-		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar', ''},
-		{'', 'group:stick', ''},
-		{'', 'group:stick', ''},
+		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar'},
+		{'', 'group:stick'},
+		{'', 'group:stick'},
 	}
 })
 
@@ -144,8 +144,8 @@ minetest.register_craft({
 minetest.register_craft({
 	output = 'mymod:hoe_orichalcum',
 	recipe = {
-		{'', 'mymod:orichalcum_bar', 'mymod:orichalcum_bar'},
-		{'', 'group:stick', ''},
-		{'', 'group:stick', ''},
+		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar'},
+		{'group:stick', ''},
+		{'group:stick', ''},
 	}
 })
