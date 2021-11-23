@@ -68,12 +68,22 @@ minetest.register_tool("mymod:axe_orichalcum", {
     sound = {breaks = "default_tool_breaks"},
 })
 
--- CRAFTS AXE ORICHALCUM
+-- CRAFTS AXE ORICHALCUM X1
 minetest.register_craft({
 	output = 'mymod:axe_orichalcum',
 	recipe = {
 		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar', ''},
 		{'mymod:orichalcum_bar', 'group:stick', ''},
+		{'', 'group:stick', ''},
+	}
+})
+
+-- CRAFTS AXE ORICHALCUM X2
+minetest.register_craft({
+	output = 'mymod:axe_orichalcum',
+	recipe = {
+		{'mymod:orichalcum_bar', 'mymod:orichalcum_bar', ''},
+		{'', 'group:stick', 'mymod:orichalcum_bar'},
 		{'', 'group:stick', ''},
 	}
 })
@@ -131,7 +141,6 @@ minetest.register_craft({
 })
 
 -- CRAFTS HOE ORICHALCUM X2 
---[[
 minetest.register_craft({
 	output = 'mymod:hoe_orichalcum',
 	recipe = {
@@ -140,4 +149,3 @@ minetest.register_craft({
 		{'', 'group:stick', ''},
 	}
 })
-]]
