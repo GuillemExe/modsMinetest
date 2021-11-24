@@ -1,6 +1,7 @@
 local data = {}
 
 rot.loadData = function ()
+    
     data.nameMod = "rot"
 
     data.chanceToxic = 25
@@ -10,6 +11,7 @@ rot.loadData = function ()
     data.intervalHoly = 1
 
     data.timerBlockToBeConsumed = 60
+    data.TimeDisappearAntidote = 30
 
     return data
 end
