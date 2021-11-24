@@ -1,3 +1,5 @@
+-- minetest.log(dump(TABLE)) -- PARA EL DEBUG
+
 function dump(o)
     if type(o) == 'table' then
         local s = '{ '

@@ -1,8 +1,8 @@
--- NIEVE CORRUPTA
-minetest.register_node("rot:dirt_with_snow_toxic", {
-	description = "Snow toxic",
-	tiles = {"original_snow.png^toxic_base.png", "default_dirt.png",
-		{name = "default_dirt.png^original_snow_side.png^toxic_side.png",
+-- Dirt with snow poison
+minetest.register_node("rot:dirt_with_snow_poison", {
+	description = "Dirt with snow poison",
+	tiles = {"original_snow.png^poison_base.png", "default_dirt.png",
+		{name = "default_dirt.png^original_snow_side.png^poison_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
     on_construct = function(pos)
@@ -14,37 +14,19 @@ minetest.register_node("rot:dirt_with_snow_toxic", {
     end,
 })
 
--- NIEVE CORRUPTA ABM
-minetest.register_abm({
-    label = 'Corruption in the snow',
-    nodenames = {'default:dirt_with_snow'},
-    neighbors = {'rot:dirt_with_snow_toxic'},
-    interval = rot.data.intervalToxic,
-    chance = rot.data.chanceToxic,
-    action = function(pos)
-        minetest.add_node(pos, {name = 'rot:dirt_with_snow_toxic'})
-        pos.y = pos.y + 1 -- SOLO ELIMINA LA PARTE SUPERIOR
-        minetest.remove_node(pos) -- SOLO ELIMINA LA PARTE SUPERIOR
-    end,
-})
-
--- NIEVE SANTA
-minetest.register_node("rot:dirt_with_snow_holy", {
-	description = "Snow holy",
-	tiles = {"original_snow.png^holy_base.png", "default_dirt.png",
-		{name = "default_dirt.png^original_snow_side.png^holy_side.png",
+-- Dirt with snow cure
+minetest.register_node("rot:dirt_with_snow_cure", {
+	description = "Dirt with snow cure",
+	tiles = {"original_snow.png^cure_base.png", "default_dirt.png",
+		{name = "default_dirt.png^original_snow_side.png^cure_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
-})
 
--- NIEVE SANTA ABM
-minetest.register_abm({
-    label = 'Holy in the snow',
-    nodenames = {'rot:dirt_with_snow_toxic'},
-    neighbors = {'rot:dirt_with_snow_holy'},
-    interval = rot.data.intervalHoly,
-    chance = rot.data.changeHoly,
-    action = function(pos)
-        minetest.add_node(pos, {name = 'rot:dirt_with_snow_holy'})
+	on_construct = function(pos)
+        minetest.get_node_timer(pos):start(rot.data.timerDisappearAntidote)
+    end,
+
+    on_timer = function(pos)
+        minetest.add_node(pos, {name = 'default:dirt_with_snow'})
     end,
 })
