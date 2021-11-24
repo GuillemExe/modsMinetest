@@ -21,14 +21,20 @@ minetest.register_abm({
 
         if node.name == "default:dirt_with_snow" then
             minetest.add_node(pos, {name = 'rot:dirt_with_snow_toxic'})
+            pos.y = pos.y + 1 -- SOLO ELIMINA LA PARTE SUPERIOR
+            minetest.remove_node(pos) -- SOLO ELIMINA LA PARTE SUPERIOR
         end
 
         if node.name == "default:dirt_with_grass" then
             minetest.add_node(pos, {name = 'rot:dirt_with_grass_toxic'})
+            pos.y = pos.y + 1 -- SOLO ELIMINA LA PARTE SUPERIOR
+            minetest.remove_node(pos) -- SOLO ELIMINA LA PARTE SUPERIOR
         end
 
         if node.name == "default:dirt_with_coniferous_litter" then
             minetest.add_node(pos, {name = 'rot:dirt_with_coniferous_toxic'})
+            pos.y = pos.y + 1 -- SOLO ELIMINA LA PARTE SUPERIOR
+            minetest.remove_node(pos) -- SOLO ELIMINA LA PARTE SUPERIOR
         end
     end,
 })

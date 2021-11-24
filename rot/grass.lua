@@ -5,6 +5,13 @@ minetest.register_node("rot:dirt_with_grass_toxic", {
 		{name = "default_dirt.png^original_grass_side.png^toxic_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
+    on_construct = function(pos)
+        minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
+    end,
+
+    on_timer = function(pos)
+        minetest.remove_node(pos)
+    end,
 })
 
 -- CESPED CORRUPTO ABM
@@ -16,8 +23,8 @@ minetest.register_abm({
     chance = rot.data.chanceToxic,
     action = function(pos)
         minetest.add_node(pos, {name = 'rot:dirt_with_grass_toxic'})
-        -- pos.y = pos.y + 1 -- SOLO ELIMINA LA PARTE SUPERIOR
-        -- minetest.remove_node(pos) -- SOLO ELIMINA LA PARTE SUPERIOR
+        pos.y = pos.y + 1 -- SOLO ELIMINA LA PARTE SUPERIOR
+        minetest.remove_node(pos) -- SOLO ELIMINA LA PARTE SUPERIOR
     end,
 })
 

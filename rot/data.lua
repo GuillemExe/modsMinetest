@@ -9,5 +9,7 @@ rot.loadData = function ()
     data.changeHoly = 5
     data.intervalHoly = 1
 
+    data.timerBlockToBeConsumed = 60
+
     return data
 end
