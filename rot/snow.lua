@@ -12,11 +12,6 @@ minetest.register_node("rot:dirt_with_snow_poison", {
         minetest.remove_node(pos)
         --minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
     end,
-    --[[
-    on_timer = function(pos)
-        minetest.remove_node(pos)
-    end,
-    ]]
 })
 
 -- Dirt with snow cure

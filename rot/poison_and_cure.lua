@@ -34,11 +34,7 @@ minetest.register_node("rot:jesus", {
     drop = "rot:jesus",
 
 	on_construct = function(pos)
-        minetest.get_node_timer(pos):start(rot.data.timeToWololo)
-    end,
-
-    on_timer = function(pos)
-		local distanceEffect = rot.data.distanceWololo
+        local distanceEffect = rot.data.distanceWololo
 		local firstPosition = {["y"] = pos.y - distanceEffect, ["x"] = pos.x - distanceEffect, ["z"] = pos.z - distanceEffect}
         local secondPosition = {["y"] = pos.y + distanceEffect, ["x"] = pos.x + distanceEffect, ["z"] = pos.z + distanceEffect}
         grass_to_dirt(firstPosition, secondPosition)
