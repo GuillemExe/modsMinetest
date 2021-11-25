@@ -61,6 +61,10 @@ rot.loadData = function ()
     data.virusTolerance = 3
     data.cureTolerance = 6
 
+    data.timeToWololo = 3
+
+    data.distanceWololo = 100
+
     -- Anteriormente pusimos una función timer del propio minetest de la wiki, 
     -- tenia un efecto bastante impresionante dentro del juego. 
     -- No tenia el efecto tan aleatorio de los ABM y parecía mas organizado, 

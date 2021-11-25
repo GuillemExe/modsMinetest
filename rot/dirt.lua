@@ -20,6 +20,6 @@ minetest.register_node("rot:dirt_cure", {
     end,
 
     on_timer = function(pos)
-        minetest.add_node(pos, {name = 'default:dirt'})
+        minetest.set_node(pos, {name = 'default:dirt'})
     end,
 })

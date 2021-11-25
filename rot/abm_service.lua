@@ -19,7 +19,7 @@ function apply_poison(pos)
 
     for index, nodeName in ipairs(rot.data.poisonNodenames) do
         if node.name == nodeName then
-            minetest.add_node(pos, {name = rot.data.poisonNeighbors[index+1]})
+            minetest.set_node(pos, {name = rot.data.poisonNeighbors[index+1]})
         end
     end
 end
@@ -76,7 +76,7 @@ minetest.register_abm({
 
         for index, nodeName in ipairs(rot.data.cureNodenames) do
             if node.name == nodeName then
-                minetest.add_node(pos, {name = rot.data.cureNeighbors[index+1]})
+                minetest.set_node(pos, {name = rot.data.cureNeighbors[index+1]})
             end
         end
     end,

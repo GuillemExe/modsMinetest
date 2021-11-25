@@ -33,6 +33,6 @@ minetest.register_node("rot:dirt_with_coniferous_litter_cure", {
     end,
 
     on_timer = function(pos)
-        minetest.add_node(pos, {name = 'default:dirt_with_coniferous_litter'})
+        minetest.set_node(pos, {name = 'default:dirt_with_coniferous_litter'})
     end,
 })

@@ -2,8 +2,9 @@ minetest.register_chatcommand("purification", {
     func = function(name, param)
         local player = minetest.get_player_by_name(name)
         local pos = player:get_pos()
-        local firstPosition = {["y"] = pos.y - 50, ["x"] = pos.x - 50, ["z"] = pos.z - 50}
-        local secondPosition = {["y"] = pos.y + 50, ["x"] = pos.x + 50, ["z"] = pos.z + 50} 
+        local distanceEffect = rot.data.distanceWololo
+        local firstPosition = {["y"] = pos.y - distanceEffect, ["x"] = pos.x - distanceEffect, ["z"] = pos.z - distanceEffect}
+        local secondPosition = {["y"] = pos.y + distanceEffect, ["x"] = pos.x + distanceEffect, ["z"] = pos.z + distanceEffect}
         grass_to_dirt(firstPosition, secondPosition)
     end,
 })

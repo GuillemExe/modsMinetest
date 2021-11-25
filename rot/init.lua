@@ -13,6 +13,6 @@ dofile(rot.path .. "/grass.lua")
 dofile(rot.path .. "/snow.lua")
 dofile(rot.path .. "/coniferous.lua")
 
+dofile(rot.path .. "/lvm_service.lua")
 dofile(rot.path .. "/poison_and_cure.lua")
 dofile(rot.path .. "/abm_service.lua")
-dofile(rot.path .. "/lvm_service.lua")
