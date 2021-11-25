@@ -8,7 +8,7 @@ rot.path = minetest.get_modpath("rot")
 
 dofile(rot.path .. "/utilities.lua")
 
-dofile(rot.path .. "/dirt.lua")
+if rot.data.canInfectDirt then dofile(rot.path .. "/dirt.lua") end
 dofile(rot.path .. "/grass.lua")
 dofile(rot.path .. "/snow.lua")
 dofile(rot.path .. "/coniferous.lua")

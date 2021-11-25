@@ -1,3 +1,6 @@
+-- Existe un bloque que contagia al resto, lo creamos por los “memes” y “porque nos parecía guay” 
+-- por si en un futuro podíamos hacer una forma de “crafteo” de este.
+
 -- POSION
 minetest.register_node("rot:poison", {
 	description = "Posion box",
@@ -6,14 +9,7 @@ minetest.register_node("rot:poison", {
 		tileable_vertical = true}},
     stack_max = 1,
 	groups = {crumbly=3, soil=1},
-
-	on_construct = function(pos)
-        minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
-    end,
-
-    on_timer = function(pos)
-        minetest.remove_node(pos)
-    end,
+    drop = "rot:poison",
 })
 
 -- CURE
@@ -24,12 +20,5 @@ minetest.register_node("rot:cure", {
 		tileable_vertical = true}},
     stack_max = 1,
 	groups = {crumbly=3, soil=1},
-
-	on_construct = function(pos)
-        minetest.get_node_timer(pos):start(rot.data.timerDisappearAntidote)
-    end,
-
-    on_timer = function(pos)
-        minetest.remove_node(pos)
-    end,
+    drop = "rot:cure",
 })

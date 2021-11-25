@@ -5,14 +5,18 @@ minetest.register_node("rot:dirt_with_coniferous_litter_poison", {
 		{name = "default_dirt.png^original_coniferous_litter_side.png^poison_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
+    drop = "rot:dirt_with_coniferous_litter_poison",
 
     on_construct = function(pos)
-        minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
+        pos.y = pos.y + 1
+        minetest.remove_node(pos)
+        --minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
     end,
-
+    --[[
     on_timer = function(pos)
         minetest.remove_node(pos)
     end,
+    ]]
 })
 
 -- Dirt with coniferous litter cure
@@ -22,6 +26,7 @@ minetest.register_node("rot:dirt_with_coniferous_litter_cure", {
 		{name = "default_dirt.png^original_coniferous_litter_side.png^cure_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
+    drop = "rot:dirt_with_coniferous_litter_cure",
 
 	on_construct = function(pos)
         minetest.get_node_timer(pos):start(rot.data.timerDisappearAntidote)

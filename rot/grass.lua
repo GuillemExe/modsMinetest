@@ -5,13 +5,18 @@ minetest.register_node("rot:dirt_with_grass_poison", {
 		{name = "default_dirt.png^original_grass_side.png^poison_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
-    on_construct = function(pos)
-        minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
-    end,
+    drop = "rot:dirt_with_grass_poison",
 
+    on_construct = function(pos)
+        pos.y = pos.y + 1
+        minetest.remove_node(pos)
+        --minetest.get_node_timer(pos):start(rot.data.timerBlockToBeConsumed)
+    end,
+    --[[
     on_timer = function(pos)
         minetest.remove_node(pos)
     end,
+    ]]
 })
 
 -- Dirt with grass cure
@@ -21,6 +26,7 @@ minetest.register_node("rot:dirt_with_grass_cure", {
 		{name = "default_dirt.png^original_grass_side.png^cure_side.png",
 		tileable_vertical = false}},
 	groups = {crumbly=3, soil=1},
+    drop = "rot:dirt_with_grass_cure",
 
 	on_construct = function(pos)
         minetest.get_node_timer(pos):start(rot.data.timerDisappearAntidote)

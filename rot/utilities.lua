@@ -1,5 +1,7 @@
 -- minetest.log(dump(TABLE)) -- PARA EL DEBUG
 
+-- Una utilidad que empezó a usar en otras prácticas añadida aquí y de mucha utilidad, nos sirvió para depurar los mods del juego.
+
 function dump(o)
     if type(o) == 'table' then
         local s = '{ '
