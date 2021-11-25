@@ -4,7 +4,6 @@ minetest.register_tool("teleport:command", {
     inventory_image = "command.png",
     stack_max = 1,
     on_use = function(item)
-        minetest.log(dump(item))
         local meta = item:get_meta()
         local pos = {["y"] = meta:get_int("y")+1, ["x"] = meta:get_int("x"), ["z"] = meta:get_int("z")}
         local player = minetest.get_player_by_name("singleplayer")
@@ -21,10 +20,7 @@ minetest.register_node("teleport:pad", {
     stack_max = 1,
     groups = {cracky = 1},
     drop = "teleport:pad",
-    on_construct = function(pos)
-        minetest.log(dump(pos))
-    end,
-    on_punch = function(pos, node, player, pointed_thing)
+    on_punch = function(pos)
         local player = minetest.get_player_by_name("singleplayer")
         local inventory = player:get_inventory()
         local stack = ItemStack("teleport:command 1")
