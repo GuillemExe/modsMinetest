@@ -62,6 +62,8 @@ minetest.register_abm({
     end,
 })
 
+
+-- Lo quisimos poner como un añadido, para darle un poco mas de juego
 -- ABM CURE - TEMPORAL
 minetest.register_abm({
     label = 'ABM cure',

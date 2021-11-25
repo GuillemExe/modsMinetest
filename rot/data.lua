@@ -4,7 +4,7 @@ rot.loadData = function ()
 
     data.nameMod = "rot"
 
-    data.canInfectDirt = false
+    data.canInfectDirt = true
 
     if data.canInfectDirt then
         -- ABM POISON
@@ -55,8 +55,8 @@ rot.loadData = function ()
     data.intervalPoisonDestroy = 5 -- 5
     data.chancePoisonDestroy = 50 -- 50
 
-    data.intervalCure = 5
-    data.changeCure = 15
+    data.intervalCure = 1
+    data.changeCure = 20
 
     data.virusTolerance = 3
     data.cureTolerance = 6
